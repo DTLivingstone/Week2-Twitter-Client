@@ -12,7 +12,22 @@ typealias JSONParserCompletion = (success: Bool, tweets: [Tweet]?) -> ()
 
 class JSONParser {
     class func tweetJSONFrom(data: NSData, completion: JSONParserCompletion) {
-        
+        do {
+            if let root = try NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers) as? [[String: AnyObject]] {
+                var tweets = [Tweet]()
+                
+                for tweetJSON in root {
+                    if let tweet = Tweet(json: tweetJSON) {
+                        tweets.append(tweet)
+                    }
+                }
+                
+                completion(success: true, tweets: tweets)
+            }
+        }
+        catch {
+            completion(success: false, tweets: nil)
+        }
     }
     class func JSONData() -> NSData {
         guard let tweetJSONPath = NSBundle.mainBundle().URLForResource("tweet", withExtension: "JSON") else { fatalError("JSON does not exit") }
