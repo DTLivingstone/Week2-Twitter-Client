@@ -30,8 +30,8 @@ class JSONParser {
         }
     }
     class func JSONData() -> NSData {
-        guard let tweetJSONPath = NSBundle.mainBundle().URLForResource("tweet", withExtension: "JSON") else { fatalError("JSON does not exit") }
-        guard let tweetJSONData = NSData(contentsOfURL: tweetJSONPath) else { fatalError("JSON does not exist") }
+        guard let tweetJSONPath = NSBundle.mainBundle().URLForResource("tweet", withExtension: "json") else { fatalError("JSON does not exist") }
+        guard let tweetJSONData = NSData(contentsOfURL: tweetJSONPath) else { fatalError("Failed to convert JSON data") }
         return tweetJSONData
     }
 }
