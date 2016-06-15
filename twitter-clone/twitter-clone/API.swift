@@ -11,12 +11,12 @@ import Social
 import Accounts
 
 class API {
-
     static let shared = API()
     var account: ACAccount?
     
     private func login(completion: (account: ACAccount?) -> ()) {
         let accountStore = ACAccountStore()
+        
         let accountType = accountStore.accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierTwitter)
         
         accountStore.requestAccessToAccountsWithType(accountType, options: nil, completion: { (granted, error) -> Void in
@@ -45,8 +45,8 @@ class API {
     }
     
     private func GETOAuthUser(completion: (user: User?) -> ()) {
-        
         let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod:.GET, URL: NSURL(string: "https://api.twitter.com/1.1/account/verify_credentials.json"), parameters: nil)
+        
         request.account = self.account
         
         request.performRequestWithHandler { (data, response, error) in
@@ -82,8 +82,8 @@ class API {
     }
     
     private func updateTimeline(completion: (tweets: [Tweet]?) -> ()) {
-        
         let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: .GET, URL: NSURL(string: "https://api.twitter.com/1.1/statuses/home_timeline.json"), parameters: nil)
+        
         request.account = self.account
         
         request.performRequestWithHandler { (data, response, error) in
