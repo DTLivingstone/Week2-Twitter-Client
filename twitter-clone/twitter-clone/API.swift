@@ -88,7 +88,7 @@ class API {
         
         request.performRequestWithHandler { (data, response, error) in
             
-            if let _ = error{
+            if let _ = error {
                 print("could not complete SLRequest for user timeline")
                 completion(tweets: nil)
                 return
@@ -114,7 +114,21 @@ class API {
             }
         }
     }
-
     
+    func getTweets(completion: (tweets: [Tweet]?)-> ()) {
+        
+        if let _ = self.account {
+            self.updateTimeline(completion)
+        } else {
+            self.login({ (account) in
+                if let account = account {
+                    API.shared.account = account
+                    self.updateTimeline(completion)
+                } else {
+                    print("account does not exist")
+                }
+            })
+        }
+    }
 }
 
