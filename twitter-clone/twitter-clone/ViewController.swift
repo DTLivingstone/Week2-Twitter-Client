@@ -31,11 +31,21 @@ class ViewController: UIViewController {
     {
         super.viewWillAppear(animated)
         
-        JSONParser.tweetJSONFrom(JSONParser.JSONData()) { (success, tweets) in
-            if success {
-                if let tweets = tweets {
-                    self.datasource = tweets
-                }
+//        JSONParser.tweetJSONFrom(JSONParser.JSONData()) { (success, tweets) in
+//            if success {
+//                if let tweets = tweets {
+//                    self.datasource = tweets
+//                }
+//            }
+//        }
+        
+        self.update()
+    }
+    
+    func update(){
+        API.shared.getTweets { (tweets) in
+            if let tweets = tweets{
+                self.datasource = tweets
             }
         }
     }
