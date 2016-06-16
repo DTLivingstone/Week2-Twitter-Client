@@ -91,8 +91,37 @@
                                     <action selector="closeButtonSelected:" destination="VSd-Uv-fUG" eventType="touchUpInside" id="dwo-xy-dxQ"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="screenname" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xx-nH-NBa">
+                                <rect key="frame" x="0.0" y="290" width="600" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="profile" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cct-g0-hP1">
+                                <rect key="frame" x="0.0" y="341" width="600" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xjw-u9-v2w">
+                                <rect key="frame" x="0.0" y="392" width="600" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0xx-nH-NBa" firstAttribute="leading" secondItem="NR0-MW-k6L" secondAttribute="leading" constant="20" id="7vd-47-mEa"/>
+                            <constraint firstAttribute="trailing" secondItem="cct-g0-hP1" secondAttribute="trailing" constant="20" id="9wu-Nx-vge"/>
+                            <constraint firstItem="cct-g0-hP1" firstAttribute="leading" secondItem="NR0-MW-k6L" secondAttribute="leading" constant="20" id="KvW-7W-TDP"/>
+                            <constraint firstItem="Xjw-u9-v2w" firstAttribute="leading" secondItem="NR0-MW-k6L" secondAttribute="leading" constant="20" id="LiU-Du-xnl"/>
+                            <constraint firstAttribute="trailing" secondItem="Xjw-u9-v2w" secondAttribute="trailing" constant="20" id="LuY-40-xiQ"/>
+                            <constraint firstAttribute="trailing" secondItem="0xx-nH-NBa" secondAttribute="trailing" constant="20" id="RHM-Gw-BFq"/>
+                            <constraint firstItem="cct-g0-hP1" firstAttribute="top" secondItem="0xx-nH-NBa" secondAttribute="bottom" constant="30" id="TGb-rG-W1S"/>
+                            <constraint firstItem="Xjw-u9-v2w" firstAttribute="top" secondItem="cct-g0-hP1" secondAttribute="bottom" constant="30" id="Xdf-vT-POa"/>
+                            <constraint firstItem="0xx-nH-NBa" firstAttribute="centerY" secondItem="NR0-MW-k6L" secondAttribute="centerY" id="nP5-gx-3KE"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bKY-mZ-Leq" userLabel="First Responder" sceneMemberID="firstResponder"/>
