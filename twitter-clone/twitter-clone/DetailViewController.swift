@@ -8,29 +8,30 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, Identity {
     @IBOutlet weak var tweetLabel: UILabel!
     @IBOutlet weak var username: UILabel!
+    
+    var tweet: Tweet?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        if let tweet = self.tweet {
+            if let retweet = tweet.retweet {
+                self.tweetLabel.text = retweet.text
+                self.username.text = retweet.user?.name
+            }
+                
+            else {
+                self.tweetLabel.text = tweet.text
+                self.username.text = tweet.user?.name
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

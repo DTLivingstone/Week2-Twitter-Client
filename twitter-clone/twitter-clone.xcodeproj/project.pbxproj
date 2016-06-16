@@ -13,6 +13,7 @@
 		6332C88D1D0F647F00ACD47D /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6332C88C1D0F647F00ACD47D /* JSONParser.swift */; };
 		63BC95131D10946800B632FE /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BC95121D10946800B632FE /* API.swift */; };
 		63E12EE21D126305003151F2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E12EE11D126305003151F2 /* DetailViewController.swift */; };
+		63E12EE61D127514003151F2 /* Identity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E12EE51D127514003151F2 /* Identity.swift */; };
 		63E707E51D0F506D001CBF7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E707E41D0F506D001CBF7C /* AppDelegate.swift */; };
 		63E707E71D0F506D001CBF7C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E707E61D0F506D001CBF7C /* ViewController.swift */; };
 		63E707EA1D0F506D001CBF7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63E707E81D0F506D001CBF7C /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 		6332C88C1D0F647F00ACD47D /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		63BC95121D10946800B632FE /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		63E12EE11D126305003151F2 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		63E12EE51D127514003151F2 /* Identity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identity.swift; sourceTree = "<group>"; };
 		63E707E11D0F506D001CBF7C /* twitter-clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "twitter-clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63E707E41D0F506D001CBF7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63E707E61D0F506D001CBF7C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				63E707E41D0F506D001CBF7C /* AppDelegate.swift */,
 				63E707F01D0F506D001CBF7C /* Info.plist */,
 				6332C8821D0F565E00ACD47D /* tweet.json */,
+				63E12EE51D127514003151F2 /* Identity.swift */,
 			);
 			name = "App Global";
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 				6332C88B1D0F571F00ACD47D /* User.swift in Sources */,
 				6332C88D1D0F647F00ACD47D /* JSONParser.swift in Sources */,
 				63E707E71D0F506D001CBF7C /* ViewController.swift in Sources */,
+				63E12EE61D127514003151F2 /* Identity.swift in Sources */,
 				6332C8891D0F570600ACD47D /* Tweet.swift in Sources */,
 				63BC95131D10946800B632FE /* API.swift in Sources */,
 				63E707E51D0F506D001CBF7C /* AppDelegate.swift in Sources */,

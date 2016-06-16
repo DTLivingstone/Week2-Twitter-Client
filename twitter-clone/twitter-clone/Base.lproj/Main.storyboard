@@ -40,7 +40,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="ELd-Ns-IUX" kind="show" id="UCL-1Z-pJb"/>
+                                            <segue destination="ELd-Ns-IUX" kind="show" identifier="DetailViewController" id="UCL-1Z-pJb"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -57,7 +57,9 @@
                             <constraint firstItem="iOf-nK-dgV" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="dfc-Qb-849"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="CVs-9z-wgW"/>
+                    <navigationItem key="navigationItem" id="CVs-9z-wgW">
+                        <barButtonItem key="leftBarButtonItem" title="Profile" id="epI-8m-jbH"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="iOf-nK-dgV" id="U4F-hk-DOT"/>
                     </connections>
@@ -78,8 +80,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="tweet text" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GKT-6Q-d03">
-                                <rect key="frame" x="0.0" y="289" width="600" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tweet text" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GKT-6Q-d03">
+                                <rect key="frame" x="0.0" y="290" width="600" height="19"/>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
