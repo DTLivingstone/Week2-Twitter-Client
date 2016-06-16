@@ -9,12 +9,21 @@
 import UIKit
 
 class ProfileViewController: UIViewController, Identity {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+    @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var profile: UILabel!
+    @IBOutlet weak var location: UILabel!
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    var user: User?
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        if let user = self.user {
+            self.userName.text = "\(user.name)"
+            print("23 \(user.name)")
+            self.location.text = "\(user.location)"
+            print("25 \(user.location)")
+        } else { print("\(user)") }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -23,6 +32,10 @@ class ProfileViewController: UIViewController, Identity {
         API.shared.GETOAuthUser { (user) in
             print(user)
         }
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
     
     @IBAction func closeButtonSelected(sender: UIButton) {
