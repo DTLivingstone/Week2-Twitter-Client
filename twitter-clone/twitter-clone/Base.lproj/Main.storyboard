@@ -10,7 +10,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="twitter_clone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="twitter_clone" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -58,7 +58,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="CVs-9z-wgW">
-                        <barButtonItem key="leftBarButtonItem" title="Profile" id="epI-8m-jbH"/>
+                        <barButtonItem key="leftBarButtonItem" title="Profile" id="epI-8m-jbH">
+                            <connections>
+                                <segue destination="VSd-Uv-fUG" kind="presentation" identifier="ProfileViewController" id="yup-nj-KLb"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="iOf-nK-dgV" id="U4F-hk-DOT"/>
@@ -68,10 +72,37 @@
             </objects>
             <point key="canvasLocation" x="789" y="355"/>
         </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="qqO-UH-lW7">
+            <objects>
+                <viewController storyboardIdentifier="ProfileViewController" id="VSd-Uv-fUG" customClass="ProfileViewController" customModule="twitter_clone" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="c56-dK-dMx"/>
+                        <viewControllerLayoutGuide type="bottom" id="RJ9-JD-oqF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NR0-MW-k6L">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yxt-K3-Vht">
+                                <rect key="frame" x="20" y="20" width="39" height="30"/>
+                                <state key="normal" title="Close"/>
+                                <connections>
+                                    <action selector="closeButtonSelected:" destination="VSd-Uv-fUG" eventType="touchUpInside" id="dwo-xy-dxQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bKY-mZ-Leq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="789" y="1086"/>
+        </scene>
         <!--Detail View Controller-->
         <scene sceneID="PbN-QR-bpE">
             <objects>
-                <viewController id="ELd-Ns-IUX" customClass="DetailViewController" customModule="twitter_clone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" id="ELd-Ns-IUX" customClass="DetailViewController" customModule="twitter_clone" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Xx4-x8-1Va"/>
                         <viewControllerLayoutGuide type="bottom" id="18r-Tq-iUt"/>
