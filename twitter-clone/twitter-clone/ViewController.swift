@@ -19,6 +19,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupTableView()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -26,20 +27,18 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 
     override func viewWillAppear(animated: Bool)
     {
         super.viewWillAppear(animated)
         
-//        JSONParser.tweetJSONFrom(JSONParser.JSONData()) { (success, tweets) in
-//            if success {
-//                if let tweets = tweets {
-//                    self.datasource = tweets
-//                }
-//            }
-//        }
-        
         self.update()
+    }
+    
+    func setupTableView() {
+        self.tableView.estimatedRowHeight = 400
+        self.tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     func update(){
