@@ -10,28 +10,32 @@ import UIKit
 
 class ProfileViewController: UIViewController, Identity {
     @IBOutlet weak var userName: UILabel!
-    @IBOutlet weak var profile: UILabel!
+    @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var location: UILabel!
     
-    var user: User?
+    var loggedInUser: User?
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        if let user = self.user {
-            self.userName.text = "\(user.name)"
-            print("23 \(user.name)")
-            self.location.text = "\(user.location)"
-            print("25 \(user.location)")
-        } else { print("\(user)") }
+        
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        
         API.shared.GETOAuthUser { (user) in
-            print(user)
+            self.loggedInUser = user
+                self.userName.text = self.loggedInUser?.name
+                self.location.text = self.loggedInUser?.location
+                if let url = NSURL(string: (self.loggedInUser?.profileImage)!)
+                {
+                    let data = NSData(contentsOfURL: url)
+                    self.profileImage.image = UIImage(data: data!)
+                }
         }
+        
     }
     
     override func didReceiveMemoryWarning() {

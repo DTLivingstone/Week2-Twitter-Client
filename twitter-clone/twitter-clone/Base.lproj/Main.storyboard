@@ -92,19 +92,20 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="screenname" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xx-nH-NBa">
-                                <rect key="frame" x="20" y="290" width="560" height="21"/>
+                                <rect key="frame" x="253" y="336" width="94" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="profile" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cct-g0-hP1">
-                                <rect key="frame" x="20" y="341" width="560" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ifZ-WT-qnu">
+                                <rect key="frame" x="225" y="108" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="azU-QA-7cw"/>
+                                    <constraint firstAttribute="width" constant="150" id="kMB-LA-qEA"/>
+                                </constraints>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xjw-u9-v2w">
-                                <rect key="frame" x="20" y="392" width="560" height="21"/>
+                                <rect key="frame" x="270" y="499" width="61" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -112,20 +113,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="0xx-nH-NBa" firstAttribute="leading" secondItem="NR0-MW-k6L" secondAttribute="leading" constant="20" id="7vd-47-mEa"/>
-                            <constraint firstAttribute="trailing" secondItem="cct-g0-hP1" secondAttribute="trailing" constant="20" id="9wu-Nx-vge"/>
-                            <constraint firstItem="cct-g0-hP1" firstAttribute="leading" secondItem="NR0-MW-k6L" secondAttribute="leading" constant="20" id="KvW-7W-TDP"/>
-                            <constraint firstItem="Xjw-u9-v2w" firstAttribute="leading" secondItem="NR0-MW-k6L" secondAttribute="leading" constant="20" id="LiU-Du-xnl"/>
-                            <constraint firstAttribute="trailing" secondItem="Xjw-u9-v2w" secondAttribute="trailing" constant="20" id="LuY-40-xiQ"/>
-                            <constraint firstAttribute="trailing" secondItem="0xx-nH-NBa" secondAttribute="trailing" constant="20" id="RHM-Gw-BFq"/>
-                            <constraint firstItem="cct-g0-hP1" firstAttribute="top" secondItem="0xx-nH-NBa" secondAttribute="bottom" constant="30" id="TGb-rG-W1S"/>
-                            <constraint firstItem="Xjw-u9-v2w" firstAttribute="top" secondItem="cct-g0-hP1" secondAttribute="bottom" constant="30" id="Xdf-vT-POa"/>
-                            <constraint firstItem="0xx-nH-NBa" firstAttribute="centerY" secondItem="NR0-MW-k6L" secondAttribute="centerY" id="nP5-gx-3KE"/>
+                            <constraint firstItem="ifZ-WT-qnu" firstAttribute="top" secondItem="c56-dK-dMx" secondAttribute="bottom" constant="88" id="0K2-hd-wrY"/>
+                            <constraint firstItem="RJ9-JD-oqF" firstAttribute="top" secondItem="Xjw-u9-v2w" secondAttribute="bottom" constant="80" id="EH1-Fk-EyP"/>
+                            <constraint firstItem="0xx-nH-NBa" firstAttribute="centerX" secondItem="NR0-MW-k6L" secondAttribute="centerX" id="TJT-ts-HeO"/>
+                            <constraint firstItem="Xjw-u9-v2w" firstAttribute="centerX" secondItem="NR0-MW-k6L" secondAttribute="centerX" id="U71-ko-1X2"/>
+                            <constraint firstItem="ifZ-WT-qnu" firstAttribute="centerX" secondItem="NR0-MW-k6L" secondAttribute="centerX" id="USN-RO-2KI"/>
+                            <constraint firstItem="0xx-nH-NBa" firstAttribute="top" secondItem="ifZ-WT-qnu" secondAttribute="bottom" constant="78" id="a8U-QF-gha"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="location" destination="Xjw-u9-v2w" id="fUb-XR-J7e"/>
-                        <outlet property="profile" destination="cct-g0-hP1" id="XSA-2g-b4T"/>
                         <outlet property="userName" destination="0xx-nH-NBa" id="jI7-Pa-InV"/>
                     </connections>
                 </viewController>
