@@ -27,13 +27,20 @@ class ProfileViewController: UIViewController, Identity {
         
         API.shared.GETOAuthUser { (user) in
             self.loggedInUser = user
+              NSOperationQueue.mainQueue().addOperationWithBlock({
                 self.userName.text = self.loggedInUser?.name
                 self.location.text = self.loggedInUser?.location
+                print("\(self.loggedInUser?.profileImage)")
                 if let url = NSURL(string: (self.loggedInUser?.profileImage)!)
                 {
                     let data = NSData(contentsOfURL: url)
-                    self.profileImage.image = UIImage(data: data!)
+                    print("\(data)")
+//                    if let foo = UIImage(data: data!) {
+//                        print("\(data)")
+//                        self.profileImage.image = nil
+//                    }
                 }
+            })
         }
         
     }

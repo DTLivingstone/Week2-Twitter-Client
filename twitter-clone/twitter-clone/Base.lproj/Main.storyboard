@@ -143,7 +143,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tweet text" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GKT-6Q-d03">
-                                <rect key="frame" x="0.0" y="290" width="600" height="19"/>
+                                <rect key="frame" x="20" y="290" width="560" height="19"/>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -159,6 +159,8 @@
                         <constraints>
                             <constraint firstItem="Kf4-s4-f3X" firstAttribute="top" secondItem="GKT-6Q-d03" secondAttribute="centerY" constant="43.5" id="5kp-Yy-OJx"/>
                             <constraint firstItem="GKT-6Q-d03" firstAttribute="top" secondItem="Xx4-x8-1Va" secondAttribute="bottom" id="611-Li-Z70"/>
+                            <constraint firstItem="GKT-6Q-d03" firstAttribute="leading" secondItem="drE-Eq-9RH" secondAttribute="leading" constant="20" id="JzA-Eg-EZ2"/>
+                            <constraint firstAttribute="trailing" secondItem="GKT-6Q-d03" secondAttribute="trailing" constant="20" id="NsY-hP-VWY"/>
                             <constraint firstItem="Kf4-s4-f3X" firstAttribute="centerX" secondItem="GKT-6Q-d03" secondAttribute="centerX" id="Uyq-OX-IY3"/>
                             <constraint firstItem="18r-Tq-iUt" firstAttribute="top" secondItem="GKT-6Q-d03" secondAttribute="bottom" id="Wnc-3s-b38"/>
                             <constraint firstItem="GKT-6Q-d03" firstAttribute="centerY" secondItem="drE-Eq-9RH" secondAttribute="centerY" id="kaX-xY-RO2"/>
@@ -168,6 +170,8 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="611-Li-Z70"/>
+                                <exclude reference="l72-Fc-5Bb"/>
+                                <exclude reference="lcl-Oh-GXa"/>
                                 <exclude reference="Wnc-3s-b38"/>
                             </mask>
                         </variation>
