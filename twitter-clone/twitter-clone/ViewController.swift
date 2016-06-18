@@ -19,35 +19,41 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        self.setupTableView()
+        self.navigationItem.title = "Twitterpated"
     }
 
     override func viewWillAppear(animated: Bool)
     {
         super.viewWillAppear(animated)
         
-//        JSONParser.tweetJSONFrom(JSONParser.JSONData()) { (success, tweets) in
-//            if success {
-//                if let tweets = tweets {
-//                    self.datasource = tweets
-//                }
-//            }
-//        }
-        
         self.update()
+    }
+    
+    func setupTableView() {
+        self.tableView.estimatedRowHeight = 400
+        self.tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     func update(){
         API.shared.getTweets { (tweets) in
-            if let tweets = tweets{
+            if let tweets = tweets {
                 self.datasource = tweets
             }
         }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == DetailViewController.id() {
+            guard let detailViewController = segue.destinationViewController as? DetailViewController else { return }
+            guard let indexPath = self.tableView.indexPathForSelectedRow else { return }
+            print(indexPath)
+            detailViewController.tweet = self.datasource[indexPath.row]
+        }
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
 }
 
