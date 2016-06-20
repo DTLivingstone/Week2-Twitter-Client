@@ -19,7 +19,9 @@ class API {
         
         let accountType = accountStore.accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierTwitter)
         
-        accountStore.requestAccessToAccountsWithType(accountType, options: nil, completion: { (granted, error) -> Void in
+        accountStore.requestAccessToAccountsWithType(accountType,
+                                                     options: nil,
+                                                     completion: { (granted, error) -> Void in
         
         if let _ = error {
             print("unable to request access to account")
@@ -45,7 +47,10 @@ class API {
     }
     
     func GETOAuthUser(completion: (user: User?) -> ()) {
-        let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod:.GET, URL: NSURL(string: "https://api.twitter.com/1.1/account/verify_credentials.json"), parameters: nil)
+        let request = SLRequest(forServiceType: SLServiceTypeTwitter,
+                                requestMethod:.GET,
+                                URL: NSURL(string: "https://api.twitter.com/1.1/account/verify_credentials.json"),
+                                parameters: nil)
         
         request.account = self.account
         
@@ -81,8 +86,11 @@ class API {
         }
     }
     
-    private func updateTimeline(completion: (tweets: [Tweet]?) -> ()) {
-        let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: .GET, URL: NSURL(string: "https://api.twitter.com/1.1/statuses/home_timeline.json"), parameters: nil)
+    private func updateTimeline(url: String, completion: (tweets: [Tweet]?) -> ()) {
+        let request = SLRequest(forServiceType: SLServiceTypeTwitter,
+                                requestMethod: .GET,
+                                URL: NSURL(string: "url"),
+                                parameters: nil)
         
         request.account = self.account
         
@@ -101,7 +109,6 @@ class API {
                         completion(tweets: tweets)
                     })
                 })
-                
             case 400...499:
                 print("client error status code: \(response.statusCode)")
                 completion(tweets: nil)
@@ -118,15 +125,28 @@ class API {
     func getTweets(completion: (tweets: [Tweet]?)-> ()) {
         
         if let _ = self.account {
-            self.updateTimeline(completion)
+            self.updateTimeline("https://api.twitter.com/1.1/statuses/home_timeline.json", completion: completion)
         } else {
             self.login({ (account) in
                 if let account = account {
                     API.shared.account = account
-                    self.updateTimeline(completion)
+                    self.updateTimeline("https://api.twitter.com/1.1/statuses/home_timeline.json",
+                        completion: completion)
                 } else {
                     print("account does not exist")
                 }
+            })
+        }
+    }
+    
+    func getImage(url: String, completion:(image: UIImage)->()) {
+        
+        NSOperationQueue().addOperationWithBlock {
+            guard let url = NSURL(string: url) else { return }
+            guard let data = NSData(contentsOfURL: url) else { return }
+            guard let image = UIImage(data: data) else { return }
+            NSOperationQueue.mainQueue().addOperationWithBlock({
+                completion(image: image)
             })
         }
     }
