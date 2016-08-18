@@ -34,12 +34,12 @@ class ProfileViewController: UIViewController, Identity {
                 if let url = NSURL(string: (self.loggedInUser?.profileImage)!)
                 {
                     let data = NSData(contentsOfURL: url)
-//                    print("\(data)")
+                    print("\(data)")
                     
-//                    if let foo = UIImage(data: data!) {
+                    if let foo = UIImage(data: data!) {
 //                        print("\(data)")
-//                        self.profileImage.image = nil
-//                    }
+//                        self.profileImage.image = foo;
+                    }
                 }
             })
         }

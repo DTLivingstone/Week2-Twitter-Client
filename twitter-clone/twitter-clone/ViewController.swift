@@ -36,7 +36,7 @@ class ViewController: UIViewController {
     }
     
     func update(){
-        API.shared.getTweets { (tweets) in
+        API.shared.getMyTweets { (tweets) in
             if let tweets = tweets {
                 self.datasource = tweets
             }

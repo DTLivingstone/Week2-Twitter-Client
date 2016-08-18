@@ -81,8 +81,8 @@ class API {
         }
     }
     
-    private func updateTimeline(completion: (tweets: [Tweet]?) -> ()) {
-        let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: .GET, URL: NSURL(string: "https://api.twitter.com/1.1/statuses/home_timeline.json"), parameters: nil)
+    private func updateTimeline(url: String, completion: (tweets: [Tweet]?) -> ()) { // take in urlString?
+        let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: .GET, URL: NSURL(string: url), parameters: nil)
         
         request.account = self.account
         
@@ -115,20 +115,28 @@ class API {
         }
     }
     
-    func getTweets(completion: (tweets: [Tweet]?)-> ()) {
+    func getMyTweets(completion: (tweets: [Tweet]?) -> ()) {
         
         if let _ = self.account {
-            self.updateTimeline(completion)
+            self.updateTimeline("https://api.twitter.com/1.1/statuses/home_timeline.json", completion: completion)
         } else {
             self.login({ (account) in
                 if let account = account {
                     API.shared.account = account
-                    self.updateTimeline(completion)
+                    self.updateTimeline("https://api.twitter.com/1.1/statuses/home_timeline.json", completion: completion)
                 } else {
-                    print("account does not exist")
+                    print("no account")
                 }
             })
         }
+        
     }
+    
+    func getUserTweets(screenName: String, completion: (tweets: [Tweet]?) -> ()) {
+        self.updateTimeline("https://api.twitter.com/1.1/statuses/home_timeline.json?screen_name=\(screenName)", completion: completion)
+    }
+    
+//    func getImage
+    
 }
 
