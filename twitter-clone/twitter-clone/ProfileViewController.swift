@@ -29,7 +29,7 @@ class ProfileViewController: UIViewController, Identity {
             self.loggedInUser = user
             self.userName.text = self.loggedInUser?.name
             self.location.text = self.loggedInUser?.location
-            print("\(self.loggedInUser?.profileImage)")
+            
             guard let url = NSURL(string: (self.loggedInUser?.profileImage)!) else { return }
             guard let imageData = NSData(contentsOfURL: url) else { return }
             NSOperationQueue.mainQueue().addOperationWithBlock({
@@ -37,8 +37,6 @@ class ProfileViewController: UIViewController, Identity {
                 self.profileImage.image = UIImage(data: imageData)
             })
         }
-
-        
     }
     
     func profileImage(key: String, completion: (image: UIImage) -> ()) {

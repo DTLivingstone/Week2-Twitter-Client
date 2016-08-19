@@ -8,7 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="91" id="8DZ-KP-iaU" customClass="TweetCell" customModule="twitter_clone" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tweetCell" rowHeight="91" id="8DZ-KP-iaU" customClass="TweetCell" customModule="twitter_clone" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="456" height="91"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8DZ-KP-iaU" id="isW-mL-p62">
@@ -18,7 +18,7 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mGk-Dq-ikN">
                         <rect key="frame" x="74" y="16" width="37" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xda-oS-s17">
@@ -31,7 +31,7 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tweet" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DsC-bq-r5N">
                         <rect key="frame" x="74" y="69" width="47" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -45,11 +45,9 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="tweet" destination="DsC-bq-r5N" id="9ly-kf-7ph"/>
                 <outlet property="tweetLabel" destination="DsC-bq-r5N" id="zgL-a2-kiW"/>
-                <outlet property="useNameLabel" destination="mGk-Dq-ikN" id="ZpG-82-qdH"/>
                 <outlet property="userImageView" destination="Xda-oS-s17" id="lPA-ss-0Dy"/>
-                <outlet property="userName" destination="mGk-Dq-ikN" id="Ppx-zN-H4B"/>
+                <outlet property="userNameLabel" destination="mGk-Dq-ikN" id="83a-QL-UPz"/>
             </connections>
             <point key="canvasLocation" x="294" y="-40.5"/>
         </tableViewCell>
