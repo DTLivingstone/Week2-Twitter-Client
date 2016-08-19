@@ -18,20 +18,32 @@ class TweetCell: UITableViewCell {
         didSet {
             print("\(tweet.text)")
             print("\(self.tweetLabel).text")
+            
             self.tweetLabel.text = tweet.text
             
+            if let user = self.tweet.user {
+                self.userNameLabel.text = user.name
             
-//            if let user = self.tweet.user {
-//                self.userNameLabel.text = user.name
-//                
-//                guard let imageURL = NSURL(string: user.profileImage) else { return }
-//                guard let imageData = NSData(contentsOfURL: imageURL) else { return }
-//                NSOperationQueue.mainQueue().addOperationWithBlock({
-//                    print("\(imageData)")
-//                    self.userImageView.image = UIImage(data: imageData)
-//                })
-//            }
+                guard let imageURL = NSURL(string: user.profileImage) else { return }
+                guard let imageData = NSData(contentsOfURL: imageURL) else { return }
+                NSOperationQueue.mainQueue().addOperationWithBlock({
+                    print("\(imageData)")
+                    self.userImageView.image = UIImage(data: imageData)
+                })
+            }
         }
+    }
+    
+    func setupTweetCell() {
+        self.userImageView.clipsToBounds = true
+        self.preservesSuperviewLayoutMargins = false
+        self.separatorInset = UIEdgeInsetsMake(0.0, 10.0, 0.0, 10.0)
+        self.layoutMargins = UIEdgeInsetsZero
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setupTweetCell()
     }
 }
 

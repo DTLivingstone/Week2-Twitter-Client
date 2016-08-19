@@ -8,14 +8,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tweetCell" rowHeight="91" id="8DZ-KP-iaU" customClass="TweetCell" customModule="twitter_clone" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tweetCell" rowHeight="200" id="8DZ-KP-iaU" customClass="TweetCell" customModule="twitter_clone" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="456" height="91"/>
             <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8DZ-KP-iaU" id="isW-mL-p62">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="90" tableViewCell="8DZ-KP-iaU" id="isW-mL-p62">
                 <rect key="frame" x="0.0" y="0.0" width="456" height="90"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mGk-Dq-ikN">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mGk-Dq-ikN">
                         <rect key="frame" x="74" y="16" width="37" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -29,7 +29,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tweet" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DsC-bq-r5N">
-                        <rect key="frame" x="74" y="69" width="47" height="21"/>
+                        <rect key="frame" x="74" y="61" width="366" height="22"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -37,8 +37,10 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="DsC-bq-r5N" firstAttribute="leading" secondItem="Xda-oS-s17" secondAttribute="trailing" constant="8" id="5CF-Xo-NYb"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="DsC-bq-r5N" secondAttribute="trailing" constant="8" id="IpL-L4-FPf"/>
                     <constraint firstItem="mGk-Dq-ikN" firstAttribute="top" secondItem="Xda-oS-s17" secondAttribute="top" id="LR2-YJ-pyQ"/>
-                    <constraint firstItem="DsC-bq-r5N" firstAttribute="bottom" secondItem="isW-mL-p62" secondAttribute="bottomMargin" constant="8" id="MmQ-fz-NOc"/>
+                    <constraint firstItem="DsC-bq-r5N" firstAttribute="bottom" secondItem="isW-mL-p62" secondAttribute="bottomMargin" constant="1" id="MmQ-fz-NOc"/>
+                    <constraint firstItem="DsC-bq-r5N" firstAttribute="top" secondItem="mGk-Dq-ikN" secondAttribute="bottom" constant="24" id="eA8-rv-eIP"/>
                     <constraint firstItem="Xda-oS-s17" firstAttribute="leading" secondItem="isW-mL-p62" secondAttribute="leadingMargin" constant="8" id="lx0-vk-2ci"/>
                     <constraint firstItem="mGk-Dq-ikN" firstAttribute="leading" secondItem="Xda-oS-s17" secondAttribute="trailing" constant="8" id="neW-Ka-w6Z"/>
                     <constraint firstItem="Xda-oS-s17" firstAttribute="top" secondItem="isW-mL-p62" secondAttribute="topMargin" constant="8" id="zfH-P7-3H8"/>

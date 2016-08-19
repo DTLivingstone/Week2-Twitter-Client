@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		63134B7E1D13528500EA1098 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63134B7D1D13528500EA1098 /* ProfileViewController.swift */; };
+		631825A81D67933B001A365D /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631825A71D67933B001A365D /* TimelineViewController.swift */; };
 		6332C8831D0F565E00ACD47D /* tweet.json in Resources */ = {isa = PBXBuildFile; fileRef = 6332C8821D0F565E00ACD47D /* tweet.json */; };
 		6332C8891D0F570600ACD47D /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6332C8881D0F570600ACD47D /* Tweet.swift */; };
 		6332C88B1D0F571F00ACD47D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6332C88A1D0F571F00ACD47D /* User.swift */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		63134B7D1D13528500EA1098 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		631825A71D67933B001A365D /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		6332C8821D0F565E00ACD47D /* tweet.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tweet.json; sourceTree = "<group>"; };
 		6332C8881D0F570600ACD47D /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		6332C88A1D0F571F00ACD47D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				63E707E61D0F506D001CBF7C /* ViewController.swift */,
+				631825A71D67933B001A365D /* TimelineViewController.swift */,
 				63134B7D1D13528500EA1098 /* ProfileViewController.swift */,
 				63E12EE11D126305003151F2 /* DetailViewController.swift */,
 				63B201B11D67688200CA5B87 /* TweetCell.swift */,
@@ -216,6 +219,7 @@
 				63E707E71D0F506D001CBF7C /* ViewController.swift in Sources */,
 				63E12EE61D127514003151F2 /* Identity.swift in Sources */,
 				634D4D531D67884200A3F277 /* Cache.swift in Sources */,
+				631825A81D67933B001A365D /* TimelineViewController.swift in Sources */,
 				6332C8891D0F570600ACD47D /* Tweet.swift in Sources */,
 				63BC95131D10946800B632FE /* API.swift in Sources */,
 				63134B7E1D13528500EA1098 /* ProfileViewController.swift in Sources */,

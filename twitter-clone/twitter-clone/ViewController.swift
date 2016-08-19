@@ -21,6 +21,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.setupTableView()
         self.navigationItem.title = "Twitterpated"
+        let tweetCell = UINib(nibName: "tweetCell", bundle: nil)
+        tableView.registerNib(tweetCell, forCellReuseIdentifier: "tweetCell")
     }
 
     override func viewWillAppear(animated: Bool)
@@ -31,7 +33,7 @@ class ViewController: UIViewController {
     }
     
     func setupTableView() {
-        self.tableView.estimatedRowHeight = 400
+        self.tableView.estimatedRowHeight = 800
         self.tableView.rowHeight = UITableViewAutomaticDimension
     }
     
@@ -63,21 +65,9 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCellWithIdentifier("tweetCell", forIndexPath: indexPath)
-//        let tweet = self.datasource[indexPath.row]
-//        
-//        cell.textLabel?.text = tweet.text
-//        
-//        
-//        return cell
-        
         let cell = tableView.dequeueReusableCellWithIdentifier("tweetCell", forIndexPath: indexPath) as! TweetCell
-        
         let tweet = self.datasource[indexPath.row]
-        
-        
         cell.tweet = tweet
-        
         
         return cell
     }
