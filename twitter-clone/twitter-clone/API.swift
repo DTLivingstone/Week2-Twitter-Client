@@ -136,7 +136,16 @@ class API {
         self.updateTimeline("https://api.twitter.com/1.1/statuses/home_timeline.json?screen_name=\(screenName)", completion: completion)
     }
     
-//    func getImage
-    
+    func getProfileImage(urlString: String, completion: (image: UIImage) -> ()) {
+        NSOperationQueue().addOperationWithBlock {
+            guard let url = NSURL(string: urlString) else { return }
+            guard let data = NSData(contentsOfURL: url) else { return }
+            guard let image = UIImage(data: data) else { return }
+            
+            NSOperationQueue.mainQueue().addOperationWithBlock({
+                completion(image: image)
+            })
+        }
+    }
 }
 

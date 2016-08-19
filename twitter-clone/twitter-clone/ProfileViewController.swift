@@ -24,26 +24,29 @@ class ProfileViewController: UIViewController, Identity {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        
         API.shared.GETOAuthUser { (user) in
+            
             self.loggedInUser = user
-              NSOperationQueue.mainQueue().addOperationWithBlock({
-                self.userName.text = self.loggedInUser?.name
-                self.location.text = self.loggedInUser?.location
-                print("\(self.loggedInUser?.profileImage)")
-                if let url = NSURL(string: (self.loggedInUser?.profileImage)!)
-                {
-                    let data = NSData(contentsOfURL: url)
-                    print("\(data)")
-                    
-                    if let foo = UIImage(data: data!) {
-//                        print("\(data)")
-//                        self.profileImage.image = foo;
-                    }
-                }
+            self.userName.text = self.loggedInUser?.name
+            self.location.text = self.loggedInUser?.location
+            print("\(self.loggedInUser?.profileImage)")
+            guard let url = NSURL(string: (self.loggedInUser?.profileImage)!) else { return }
+            guard let imageData = NSData(contentsOfURL: url) else { return }
+            NSOperationQueue.mainQueue().addOperationWithBlock({
+                print("\(imageData)")
+                self.profileImage.image = UIImage(data: imageData)
             })
         }
+
         
+    }
+    
+    func profileImage(key: String, completion: (image: UIImage) -> ()) {
+        API.shared.getProfileImage(key) {(image) in
+            completion(image: image)
+            
+            return
+        }
     }
     
     override func didReceiveMemoryWarning() {
