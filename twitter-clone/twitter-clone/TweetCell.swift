@@ -16,9 +16,6 @@ class TweetCell: UITableViewCell {
     
     var tweet: Tweet! {
         didSet {
-            print("\(tweet.text)")
-            print("\(self.tweetLabel).text")
-            
             self.tweetLabel.text = tweet.text
             
             if let user = self.tweet.user {
@@ -27,7 +24,6 @@ class TweetCell: UITableViewCell {
                 guard let imageURL = NSURL(string: user.profileImage) else { return }
                 guard let imageData = NSData(contentsOfURL: imageURL) else { return }
                 NSOperationQueue.mainQueue().addOperationWithBlock({
-                    print("\(imageData)")
                     self.userImageView.image = UIImage(data: imageData)
                 })
             }
@@ -44,6 +40,12 @@ class TweetCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setupTweetCell()
+        
+    }
+    override func setSelected(selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        // Configure the view for the selected state
     }
 }
 

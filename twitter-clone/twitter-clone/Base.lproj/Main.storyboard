@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tweetCell" id="SkB-xh-X89" customClass="TweetCell" customModule="twitter_clone" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tweetCell" id="SkB-xh-X89">
                                         <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SkB-xh-X89" id="UUM-WU-Jxo">
@@ -31,7 +31,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="ELd-Ns-IUX" kind="show" identifier="DetailViewController" id="UCL-1Z-pJb"/>
+                                            <segue destination="ELd-Ns-IUX" kind="show" identifier="DetailViewController" id="Oo3-ko-u3A"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -61,7 +61,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="789" y="355"/>
+            <point key="canvasLocation" x="789" y="313"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="qqO-UH-lW7">
@@ -88,6 +88,12 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xjw-u9-v2w">
+                                <rect key="frame" x="270" y="499" width="61" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ifZ-WT-qnu">
                                 <rect key="frame" x="263" y="170" width="75" height="75"/>
                                 <constraints>
@@ -95,12 +101,6 @@
                                     <constraint firstAttribute="width" constant="75" id="kMB-LA-qEA"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xjw-u9-v2w">
-                                <rect key="frame" x="270" y="499" width="61" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -179,6 +179,7 @@
                     </view>
                     <connections>
                         <outlet property="tweetLabel" destination="GKT-6Q-d03" id="qR3-gC-c9D"/>
+                        <outlet property="userImage" destination="0pC-6f-e7A" id="VH5-b4-QzF"/>
                         <outlet property="username" destination="Kf4-s4-f3X" id="da0-D3-vcG"/>
                         <segue destination="1aS-29-IjF" kind="show" id="sXz-so-Lq1"/>
                     </connections>
@@ -190,6 +191,7 @@
         <!--Timeline View Controller-->
         <scene sceneID="Gvj-Tf-Vn7">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WvG-V3-J4e" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="TimelineViewController" id="1aS-29-IjF" customClass="TimelineViewController" customModule="twitter_clone" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VGe-sf-jBw"/>
@@ -220,7 +222,6 @@
                         <outlet property="tableView" destination="zpA-6u-LgG" id="JVp-NK-lU1"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WvG-V3-J4e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2246" y="355"/>
         </scene>
