@@ -20,7 +20,7 @@ class TimelineViewController: UIViewController, UITableViewDataSource, Identity 
         }
     }
     
-    func update(screenname: String){
+    func update(screenname: String) {
         
         API.shared.getUserTweets(screenname) { (tweets) in
             guard let tweets = tweets else { return}

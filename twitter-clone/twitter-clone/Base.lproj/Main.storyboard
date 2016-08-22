@@ -61,7 +61,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="789" y="313"/>
+            <point key="canvasLocation" x="733" y="355"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="qqO-UH-lW7">
@@ -120,7 +120,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bKY-mZ-Leq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="789" y="1086"/>
+            <point key="canvasLocation" x="733" y="1054"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="PbN-QR-bpE">
@@ -147,6 +147,15 @@
                                     <constraint firstAttribute="width" constant="50" id="gIZ-VP-u7L"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jbe-kT-vJP">
+                                <rect key="frame" x="275" y="154" width="50" height="50"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="1aS-29-IjF" kind="show" id="obQ-ZH-KhZ"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tweet text" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GKT-6Q-d03">
                                 <rect key="frame" x="20" y="290" width="560" height="19"/>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
@@ -161,8 +170,12 @@
                             <constraint firstItem="GKT-6Q-d03" firstAttribute="top" secondItem="Xx4-x8-1Va" secondAttribute="bottom" id="611-Li-Z70"/>
                             <constraint firstItem="GKT-6Q-d03" firstAttribute="leading" secondItem="drE-Eq-9RH" secondAttribute="leading" constant="20" id="JzA-Eg-EZ2"/>
                             <constraint firstAttribute="trailing" secondItem="GKT-6Q-d03" secondAttribute="trailing" constant="20" id="NsY-hP-VWY"/>
+                            <constraint firstItem="Jbe-kT-vJP" firstAttribute="centerX" secondItem="0pC-6f-e7A" secondAttribute="centerX" id="OOg-ZE-AC8"/>
                             <constraint firstItem="Kf4-s4-f3X" firstAttribute="centerX" secondItem="GKT-6Q-d03" secondAttribute="centerX" id="Uyq-OX-IY3"/>
                             <constraint firstItem="18r-Tq-iUt" firstAttribute="top" secondItem="GKT-6Q-d03" secondAttribute="bottom" id="Wnc-3s-b38"/>
+                            <constraint firstItem="Jbe-kT-vJP" firstAttribute="height" secondItem="0pC-6f-e7A" secondAttribute="height" id="XU0-gQ-c4K"/>
+                            <constraint firstItem="Jbe-kT-vJP" firstAttribute="centerY" secondItem="0pC-6f-e7A" secondAttribute="centerY" id="dn1-WH-yMR"/>
+                            <constraint firstItem="Jbe-kT-vJP" firstAttribute="width" secondItem="0pC-6f-e7A" secondAttribute="width" id="hyW-e7-m1Z"/>
                             <constraint firstItem="GKT-6Q-d03" firstAttribute="centerY" secondItem="drE-Eq-9RH" secondAttribute="centerY" id="kaX-xY-RO2"/>
                             <constraint firstAttribute="trailingMargin" secondItem="GKT-6Q-d03" secondAttribute="trailing" constant="-20" id="l72-Fc-5Bb"/>
                             <constraint firstItem="GKT-6Q-d03" firstAttribute="leading" secondItem="drE-Eq-9RH" secondAttribute="leadingMargin" constant="-20" id="lcl-Oh-GXa"/>
@@ -181,17 +194,15 @@
                         <outlet property="tweetLabel" destination="GKT-6Q-d03" id="qR3-gC-c9D"/>
                         <outlet property="userImage" destination="0pC-6f-e7A" id="VH5-b4-QzF"/>
                         <outlet property="username" destination="Kf4-s4-f3X" id="da0-D3-vcG"/>
-                        <segue destination="1aS-29-IjF" kind="show" id="sXz-so-Lq1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x86-tU-ecI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1529" y="355"/>
+            <point key="canvasLocation" x="1411" y="355"/>
         </scene>
         <!--Timeline View Controller-->
         <scene sceneID="Gvj-Tf-Vn7">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WvG-V3-J4e" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="TimelineViewController" id="1aS-29-IjF" customClass="TimelineViewController" customModule="twitter_clone" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VGe-sf-jBw"/>
@@ -222,8 +233,9 @@
                         <outlet property="tableView" destination="zpA-6u-LgG" id="JVp-NK-lU1"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WvG-V3-J4e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2246" y="355"/>
+            <point key="canvasLocation" x="2082" y="355"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="deO-MO-A5g">
