@@ -33,7 +33,6 @@ class ProfileViewController: UIViewController, Identity {
             guard let url = NSURL(string: (self.loggedInUser?.profileImage)!) else { return }
             guard let imageData = NSData(contentsOfURL: url) else { return }
             NSOperationQueue.mainQueue().addOperationWithBlock({
-                print("\(imageData)")
                 self.profileImage.image = UIImage(data: imageData)
             })
         }

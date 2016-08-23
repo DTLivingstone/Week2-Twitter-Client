@@ -27,8 +27,7 @@ class ViewController: UIViewController, UITableViewDelegate, Identity {
         tableView.registerNib(tweetCell, forCellReuseIdentifier: "tweetCell")
     }
 
-    override func viewWillAppear(animated: Bool)
-    {
+    override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
         self.update()
@@ -49,26 +48,16 @@ class ViewController: UIViewController, UITableViewDelegate, Identity {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("did select row")
-        let x = DetailViewController.id()
-        print("\(x)")
         self.performSegueWithIdentifier(DetailViewController.id(), sender: nil)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        print("prepare for segue")
         if segue.identifier == DetailViewController.id() {
             guard let detailViewController = segue.destinationViewController as? DetailViewController else {
                 return }
             guard let indexPath = self.tableView.indexPathForSelectedRow else { return }
-            print(indexPath)
             detailViewController.tweet = self.datasource[indexPath.row]
         }
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
 }
 

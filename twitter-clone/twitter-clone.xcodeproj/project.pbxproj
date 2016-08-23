@@ -74,9 +74,9 @@
 			isa = PBXGroup;
 			children = (
 				63E707E61D0F506D001CBF7C /* ViewController.swift */,
-				631825A71D67933B001A365D /* TimelineViewController.swift */,
 				63134B7D1D13528500EA1098 /* ProfileViewController.swift */,
 				63E12EE11D126305003151F2 /* DetailViewController.swift */,
+				631825A71D67933B001A365D /* TimelineViewController.swift */,
 				63B201B11D67688200CA5B87 /* TweetCell.swift */,
 			);
 			name = Controller;

@@ -8,75 +8,61 @@
 
 import UIKit
 
-class TimelineViewController: UIViewController, UITableViewDataSource, Identity {
+class TimelineViewController: UIViewController, UITableViewDelegate, Identity {
     
     @IBOutlet weak var tableView: UITableView!
     
     var tweet: Tweet?
     
-    var tweets = [Tweet]() {
-        didSet{
+    var datasource = [Tweet]() {
+        didSet {
             self.tableView.reloadData()
         }
-    }
-    
-    func update(screenname: String) {
-        
-        API.shared.getUserTweets(screenname) { (tweets) in
-            guard let tweets = tweets else { return}
-            self.tweets = tweets
-        }
-        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupTableView()
-        
-        self.tableView.rowHeight = UITableViewAutomaticDimension
-        
+
         if let tweet = self.tweet, user = tweet.user {
-            if let originalTweet = tweet.retweet, originalUser = originalTweet.user{
-                
+            if let originalTweet = tweet.retweet, originalUser = originalTweet.user {
+                print("retweet")
                 self.navigationItem.title = originalUser.name
                 self.update(originalUser.name!)
-            }
-            else {
-                print("went here instead")
+            } else {
+                print("original content")
                 self.navigationItem.title = user.name
                 self.update(user.name!)
             }
         }
-        
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("I have \(self.tweets.count)")
-        return self.tweets.count
+    func update(screenname: String) {
+        API.shared.getUserTweets(screenname) { (tweets) in
+            guard let tweets = tweets else { return}
+            self.datasource = tweets
+        }
     }
     
     func setupTableView()
     {
         self.tableView.estimatedRowHeight = 100
         self.tableView.rowHeight = UITableViewAutomaticDimension
-        self.tableView.registerNib(UINib(nibName: "TweetCell", bundle: nil), forCellReuseIdentifier: "TweetCell")
-        self.tableView.dataSource = self
+        self.tableView.delegate = self
+    }
+}
+
+extension TimelineViewController: UITableViewDataSource {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.datasource.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("tweetCell", forIndexPath: indexPath) as! TweetCell
+        let tweet = self.datasource[indexPath.row]
+        cell.tweet = tweet
         
-        let tweetCell = self.tableView.dequeueReusableCellWithIdentifier("TweetCell", forIndexPath: indexPath) as! TweetCell
-        
-        tweetCell.tweet = self.tweets[indexPath.row]
-        
-        return tweetCell
-        
+        return cell
     }
 }

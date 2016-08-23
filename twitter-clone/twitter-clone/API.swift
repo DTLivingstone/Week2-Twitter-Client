@@ -89,6 +89,8 @@ class API {
         request.performRequestWithHandler { (data, response, error) in
             
             if let _ = error {
+                print("\(url)")
+                print("\(request)")
                 print("could not complete SLRequest for user timeline")
                 completion(tweets: nil)
                 return
